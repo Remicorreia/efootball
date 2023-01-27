@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+
+		<div class="row justify-content-start">
+	<h1>Home Page</h1>
+
+	{% for produit in produits %}
+
+			<div
+				class="col-4">{# {{ produit.photo }} #}
+				<img class="imapp" width="100" src="{{ asset("images/" ~ produit.photo ) }}" alt="{{ produit.titre }}">
+				{{ produit.titre }}
+			</div>
+		
+		<style>/* .apps{
+        background-color: gray;
+        border-radius: 25px;
+        margin: 50px;
+        width: 180px;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-direction: column;
+    }
+
+    .container{
+        width:1440px;
+        height: auto;
+        padding: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content:center;
+        flex-wrap: wrap;
+    } */</style>
+
+
+{% else %}
+
+	no records found
+
+{% endfor %}
+</div>
+
+        <input type="button" value="Télécharger" onclick="window.location='https://togoweb.net/wp-content/uploads/2022/08/Monument-Amazone-Benin.jpg';">
+
+<a class="btn btn-primary" href="" role="https://togoweb.net/wp-content/uploads/2022/08/Monument-Amazone-Benin.jpg">Link</a>
+
+{% endblock %}
